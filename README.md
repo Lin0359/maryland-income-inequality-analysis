@@ -1,6 +1,6 @@
 # Maryland County Income & Inequality
 
-An exploratory analysis of Maryland county level income and income inequality using U.S. Census Bureau American Community Survey (ACS) 5-year estimates.
+An exploratory analysis of Maryland county-level income and income inequality using U.S. Census Bureau American Community Survey (ACS) 5-year estimates.
 
 [Published analysis](https://medium.com/inst414-data-science-tech/the-economy-of-maryland-has-been-developing-steadily-year-by-year-but-whats-the-cost-147b667abb3a) · [Census API](https://api.census.gov/data/)
 
@@ -22,12 +22,12 @@ The reported county-average median household income rose from about $69,000 in 2
 
 ## How to run
 
-Requires Python 3 and the packages `requests`, `pandas`, and `matplotlib`.
+Requires Python 3 and an internet connection to reach the Census API. Install the project dependencies and run the script:
 
-```bash
-python -m pip install requests pandas matplotlib
+~~~bash
+python -m pip install -r requirements.txt
 python data_maryland.py
-```
+~~~
 
 The script prints the county-average summaries and correlations, then opens two trend plots. It skips failed year requests and reports them at the end; a run with no successful year stops with an error.
 
@@ -43,8 +43,10 @@ The script prints the county-average summaries and correlations, then opens two 
 
 | File | Purpose |
 | --- | --- |
-| `data_maryland.py` | Queries ACS county data, calculates descriptive summaries and correlations, and displays trend plots. |
-| `assets/maryland_trend_snapshot.svg` | Visual summary of approximate endpoints stated in the published report. |
+| data_maryland.py | Queries ACS county data, calculates descriptive summaries and correlations, and displays trend plots. |
+| requirements.txt | Python dependencies for the analysis. |
+| .gitignore | Excludes local Python environments and caches. |
+| assets/maryland_trend_snapshot.svg | Visual summary of approximate endpoints stated in the published report. |
 
 ## References
 
